@@ -61,8 +61,11 @@ Make sure the following are installed on your machine:
    cd drug-speak-server
    ```
 
-8. **Install Node.js Dependencies**  
-   In VS Code terminal, install the required backend API server:
+8. **Install required Node.js Dependencies**
+
+   ```bash
+   git checkout -b legacy-sqlite3 origin/legacy-sqlite3
+   ```
 
    ```bash
    npm install --legacy-peer-deps
