@@ -68,7 +68,7 @@ Make sure the following are installed on your machine:
    ```
 
    ```bash
-   npm install --legacy-peer-deps
+   npm install
    ```
 
 9. **Start the backend API server**  
