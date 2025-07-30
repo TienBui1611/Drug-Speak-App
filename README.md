@@ -1,87 +1,133 @@
-# 💊 Drug Speak  
+# 💊 Drug Speak
 
-A React Native educational application for learning pharmaceutical drug pronunciation, featuring audio playback, pronunciation practice, user authentication, and comprehensive drug database with learning progress tracking.
+A comprehensive React Native educational application designed for learning pharmaceutical drug pronunciation. The app features interactive audio playback, pronunciation practice exercises, user authentication, and a comprehensive drug database with personalized learning progress tracking.
 
-## 🚀 How to Run This React Native App in VS Code with Android Studio
+## ✨ Features
 
-### ✅ Prerequisites  
+- 🎯 **Interactive Drug Learning**: Browse drugs by categories with detailed information
+- 🔊 **Audio Pronunciation**: High-quality audio recordings from both male and female voices
+- 📚 **Learning Modules**: Structured learning sessions with progress tracking
+- 👥 **User Authentication**: Secure sign-in/sign-up functionality
+- 📊 **Progress Tracking**: Monitor your learning journey and achievements
+- 🏆 **Study Records**: Sync and track study sessions across devices
+- 🌐 **Community Features**: Connect with other learners
 
-Make sure the following are installed on your machine:
+## 🏗️ Project Structure
 
-- [Node.js 18.x or higher](https://nodejs.org/)  
-- [Android Studio](https://developer.android.com/studio)  
-- [Visual Studio Code](https://code.visualstudio.com/)  
-- [Git](https://git-scm.com/)
+```
+Drug-Speak-App/
+├── 📱 App.js                    # Main application entry point
+├── 📋 app.json                  # Expo/React Native configuration
+├── 📦 package.json              # Dependencies and scripts
+├── 🗂️ assets/                   # Static app assets (icons, splash)
+└── 📁 src/
+    ├── 🎵 assets/audio/         # Drug pronunciation audio files
+    ├── 🧩 components/           # Reusable UI components
+    │   └── PronunciationLabel.js
+    ├── ⚙️ constants/            # App-wide constants
+    ├── 💊 data/                 # Static data and drug information
+    │   └── drugData.js
+    ├── 🧭 navigation/           # Navigation configuration
+    │   └── AppNavigator.js
+    ├── 📱 screens/              # Application screens
+    │   ├── auth/               # Authentication screens
+    │   ├── drugs/              # Drug-related screens
+    │   ├── learning/           # Learning module screens
+    │   ├── CommunityScreen.js
+    │   └── ProfileScreen.js
+    ├── 🌐 services/            # API and external services
+    │   └── api.js
+    ├── 🗄️ store/               # Redux state management
+    │   ├── authSlice.js
+    │   ├── drugSlice.js
+    │   ├── learningSlice.js
+    │   ├── studyRecordsSlice.js
+    │   └── store.js
+    └── 🛠️ utils/               # Utility functions
+        └── studyRecordSync.js
+```
 
----
+## 🚀 Getting Started
 
-### 🛠️ Steps to Run the Project
+### Prerequisites
 
-1. **Open the Project in VS Code**  
+Ensure you have the following installed:
 
-2. **Install Node.js Dependencies**  
-   Run the following command in the VS Code terminal:
+- **[Node.js 18.x or higher](https://nodejs.org/)** - JavaScript runtime
+- **[Android Studio](https://developer.android.com/studio)** - Android development environment
+- **[Visual Studio Code](https://code.visualstudio.com/)** - Code editor (recommended)
+- **[Git](https://git-scm.com/)** - Version control
+
+### Installation & Setup
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone <repository-url>
+   cd Drug-Speak-App
+   ```
+
+2. **Install Dependencies**
 
    ```bash
    npm install
    ```
 
-3. **Install React Native CLI Globally**  
+3. **Install React Native CLI** *(if not already installed)*
 
    ```bash
    npm install -g @react-native-community/cli
    ```
 
-4. **Set Up Android Development Environment**  
+4. **Android Development Setup**
+   - Install Android Studio with default settings
+   - Add Android Studio to your system PATH
+   - Open Android Studio → **Tools** → **SDK Manager**
+   - Install:
+     - Android SDK (API level 33 or higher)
+     - Android SDK Build-Tools
+     - Android Emulator
 
-   **Android Studio Setup:**
-   - Install Android Studio with default settings, adding it to your system PATH (check the relevant checkbox)
-   - Open Android Studio → `Tools` → `SDK Manager`
-   - Install Android SDK (API level 33 or higher)
-   - Install Android SDK Build-Tools
-   - Install Android Emulator``
-
-5. **Create Android Virtual Device (AVD)**  
+5. **Create Android Virtual Device (AVD)**
    - Open Android Studio
-   - Go to `Tools` → `AVD Manager`
-   - Click `Create Virtual Device`
-   - Choose a device (recommended: Pixel 4)
-   - Select system image (Android API 33+)
-   - Click `Finish` and start the emulator
+   - Navigate to **Tools** → **AVD Manager**
+   - Click **Create Virtual Device**
+   - Select device (recommended: Pixel 4)
+   - Choose system image (Android API 33+)
+   - Complete setup and start the emulator
 
-6. **Install the backend API server**  
+6. **Backend Server Setup**
 
    ```bash
+   # Clone the backend repository
    git clone https://github.com/LarryAtGU/drug-speak-server
-   ```
-
-7. **Go directly to that server**  
-
-   ```bash
    cd drug-speak-server
-   ```
-
-8. **Install required Node.js Dependencies**
-
-   ```bash
+   
+   # Switch to the legacy branch
    git checkout -b legacy-sqlite3 origin/legacy-sqlite3
-   ```
-
-   ```bash
+   
+   # Install backend dependencies
    npm install
+   
+   # Start the backend server
+   npm run start
    ```
 
-9. **Start the backend API server**  
+7. **Run the Mobile App**
+
+   Open a new terminal in the Drug-Speak-App directory:
 
    ```bash
    npm run start
    ```
 
-10. **Run the App on Android**  
-    Open a new terminal in VS Code and run:
+   When Metro bundler starts, press **`a`** to run on Android emulator.
 
-    ```bash
-    npm run start
-    ```
+## 🛠️ Tech Stack
 
-    and then click on `a`
+- **Frontend**: React Native, Redux Toolkit
+- **Navigation**: React Navigation
+- **Audio**: React Native Sound/Audio libraries
+- **Backend**: Node.js (separate repository)
+- **Database**: SQLite (backend)
+- **Development**: Metro bundler, Android Studio
